@@ -1,0 +1,15 @@
+; php.ini-production (minimal safe production settings)
+; This file contains only safe, non-secret configuration to avoid
+; Deprecation warnings and to keep JSON responses clean in production.
+
+display_errors = Off
+display_startup_errors = Off
+error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT
+log_errors = On
+memory_limit = 256M
+date.timezone = UTC
+
+; Opcional: ajustar según necesidades
+; max_execution_time = 30
+; post_max_size = 8M
+; upload_max_filesize = 2M
