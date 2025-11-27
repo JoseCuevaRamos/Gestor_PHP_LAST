@@ -1,0 +1,2 @@
+# Ejecutar el script de recordatorios todos los días a las 09:00
+* * * * * php /var/www/html/scripts/enviar_recordatorios.php >> /var/log/recordatorios_tareas.log 2>&1

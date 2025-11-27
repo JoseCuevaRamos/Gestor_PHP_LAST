@@ -1,0 +1,13 @@
+# Ignorar carpetas de dependencias
+vendor/
+
+# Ignorar archivos y carpetas de Git
+.git/
+.gitignore
+
+# Ignorar el archivo de entorno (se inyecta en tiempo de ejecución)
+.env
+
+# Ignorar archivos de configuración de editores
+.vscode/
+.idea/

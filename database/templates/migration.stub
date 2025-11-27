@@ -1,0 +1,27 @@
+<?php
+
+use App\Database\Migrations\BaseMigration;
+use Illuminate\Database\Schema\Blueprint;
+
+class $className extends BaseMigration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        //
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        //
+    }
+}

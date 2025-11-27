@@ -1,0 +1,115 @@
+[INFO] Buscando tareas que vencen el 2025-11-24...
+[INFO] Enviando recordatorio para tarea #4 (Tarea 1) a anderson.rojas1805@gmail.com
+[INFO] Enviando recordatorio para tarea #5 (Tarea 2) a anderson.rojas1805@gmail.com
+[INFO] Enviando recordatorio para tarea #6 (Tarea 3) a anderson.rojas1805@gmail.com
+[INFO] Proceso de recordatorios finalizado.
+[INFO] Buscando tareas que vencen el 2025-11-24 (hora Perú)...
+
+Fatal error: Uncaught PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/html/vendor/illuminate/database/Connectors/Connector.php:70
+Stack trace:
+#0 /var/www/html/vendor/illuminate/database/Connectors/Connector.php(70): PDO->__construct('mysql:host=db;p...', 'conduit_user', 'secret', Array)
+#1 /var/www/html/vendor/illuminate/database/Connectors/Connector.php(46): Illuminate\Database\Connectors\Connector->createPdoConnection('mysql:host=db;p...', 'conduit_user', 'secret', Array)
+#2 /var/www/html/vendor/illuminate/database/Connectors/MySqlConnector.php(24): Illuminate\Database\Connectors\Connector->createConnection('mysql:host=db;p...', Array, Array)
+#3 /var/www/html/vendor/illuminate/database/Connectors/ConnectionFactory.php(182): Illuminate\Database\Connectors\MySqlConnector->connect(Array)
+#4 [internal function]: Illuminate\Database\Connectors\ConnectionFactory->Illuminate\Database\Connectors\{closure}()
+#5 /var/www/html/vendor/illuminate/database/Connection.php(919): call_user_func(Object(Closure))
+#6 /var/www/html/vendor/illuminate/database/Connection.php(944): Illuminate\Database\Connection->getPdo()
+#7 /var/www/html/vendor/illuminate/database/Connection.php(399): Illuminate\Database\Connection->getReadPdo()
+#8 /var/www/html/vendor/illuminate/database/Connection.php(325): Illuminate\Database\Connection->getPdoForSelect(true)
+#9 /var/www/html/vendor/illuminate/database/Connection.php(657): Illuminate\Database\Connection->Illuminate\Database\{closure}('select * from `...', Array)
+#10 /var/www/html/vendor/illuminate/database/Connection.php(624): Illuminate\Database\Connection->runQueryCallback('select * from `...', Array, Object(Closure))
+#11 /var/www/html/vendor/illuminate/database/Connection.php(333): Illuminate\Database\Connection->run('select * from `...', Array, Object(Closure))
+#12 /var/www/html/vendor/illuminate/database/Query/Builder.php(2130): Illuminate\Database\Connection->select('select * from `...', Array, true)
+#13 /var/www/html/vendor/illuminate/database/Query/Builder.php(2118): Illuminate\Database\Query\Builder->runSelect()
+#14 /var/www/html/vendor/illuminate/database/Query/Builder.php(2604): Illuminate\Database\Query\Builder->Illuminate\Database\Query\{closure}()
+#15 /var/www/html/vendor/illuminate/database/Query/Builder.php(2119): Illuminate\Database\Query\Builder->onceWithColumns(Array, Object(Closure))
+#16 /var/www/html/vendor/illuminate/database/Eloquent/Builder.php(521): Illuminate\Database\Query\Builder->get(Array)
+#17 /var/www/html/vendor/illuminate/database/Eloquent/Builder.php(505): Illuminate\Database\Eloquent\Builder->getModels(Array)
+#18 /var/www/html/vendor/illuminate/database/Eloquent/Builder.php(673): Illuminate\Database\Eloquent\Builder->get()
+#19 /var/www/html/scripts/enviar_recordatorios.php(61): Illuminate\Database\Eloquent\Builder->chunkById(50, Object(Closure))
+#20 {main}
+
+Next Illuminate\Database\QueryException: SQLSTATE[HY000] [2002] Connection refused (SQL: select * from `tareas` where `status` = 0 and date(`due_at`) = 2025-11-24 and `completed_at` is null and `id_asignado` is not null order by `id_tarea` asc limit 50) in /var/www/html/vendor/illuminate/database/Connection.php:664
+Stack trace:
+#0 /var/www/html/vendor/illuminate/database/Connection.php(624): Illuminate\Database\Connection->runQueryCallback('select * from `...', Array, Object(Closure))
+#1 /var/www/html/vendor/illuminate/database/Connection.php(333): Illuminate\Database\Connection->run('select * from `...', Array, Object(Closure))
+#2 /var/www/html/vendor/illuminate/database/Query/Builder.php(2130): Illuminate\Database\Connection->select('select * from `...', Array, true)
+#3 /var/www/html/vendor/illuminate/database/Query/Builder.php(2118): Illuminate\Database\Query\Builder->runSelect()
+#4 /var/www/html/vendor/illuminate/database/Query/Builder.php(2604): Illuminate\Database\Query\Builder->Illuminate\Database\Query\{closure}()
+#5 /var/www/html/vendor/illuminate/database/Query/Builder.php(2119): Illuminate\Database\Query\Builder->onceWithColumns(Array, Object(Closure))
+#6 /var/www/html/vendor/illuminate/database/Eloquent/Builder.php(521): Illuminate\Database\Query\Builder->get(Array)
+#7 /var/www/html/vendor/illuminate/database/Eloquent/Builder.php(505): Illuminate\Database\Eloquent\Builder->getModels(Array)
+#8 /var/www/html/vendor/illuminate/database/Eloquent/Builder.php(673): Illuminate\Database\Eloquent\Builder->get()
+#9 /var/www/html/scripts/enviar_recordatorios.php(61): Illuminate\Database\Eloquent\Builder->chunkById(50, Object(Closure))
+#10 {main}
+  thrown in /var/www/html/vendor/illuminate/database/Connection.php on line 664
+[INFO] Buscando tareas que vencen el 2025-11-24 (hora Perú)...
+[INFO] Enviando recordatorio para tarea #4 (Tarea 1) a piero.renzo.rojas.ramos@gmial.com
+[INFO] Enviando recordatorio para tarea #5 (Tarea 2) a anderson.rojas1805@gmail.com
+[INFO] Enviando recordatorio para tarea #6 (Tarea 3) a anderson.rojas1805@gmail.com
+[INFO] Proceso de recordatorios finalizado.
+[INFO] Buscando tareas que vencen el 2025-11-25 (hora Perú)...
+[INFO] Proceso de recordatorios finalizado.
+[WARN] No se pudo conectar a la BD (intento 1/5): SQLSTATE[HY000] [2002] Connection refused
+[INFO] Buscando tareas que vencen el 2025-11-25 (hora Perú)...
+[INFO] Proceso de recordatorios finalizado.
+[WARN] No se pudo conectar a la BD (intento 1/5): SQLSTATE[HY000] [2002] Connection refused
+[INFO] Buscando tareas que vencen el 2025-11-25 (hora Perú)...
+[INFO] Proceso de recordatorios finalizado.
+[WARN] No se pudo conectar a la BD (intento 1/5): SQLSTATE[HY000] [2002] Connection refused
+[INFO] Buscando tareas que vencen el 2025-11-25 (hora Perú)...
+[INFO] Proceso de recordatorios finalizado.
+[WARN] No se pudo conectar a la BD (intento 1/5): SQLSTATE[HY000] [2002] Connection refused
+[INFO] Buscando tareas que vencen el 2025-11-25 (hora Perú)...
+[INFO] Proceso de recordatorios finalizado.
+[INFO] Buscando tareas que vencen el 2025-11-27 (hora Perú)...
+[INFO] Proceso de recordatorios finalizado.
+[INFO] Buscando tareas que vencen el 2025-11-27 (hora Perú)...
+[INFO] Proceso de recordatorios finalizado.
+[INFO] Buscando tareas que vencen el 2025-11-27 (hora Perú)...
+[INFO] Enviando recordatorio para tarea #7 (Tarea inicia Ander) a anderson.rojas1805@gmail.com
+[INFO] Proceso de recordatorios finalizado.
+[WARN] No se pudo conectar a la BD (intento 1/5): SQLSTATE[HY000] [2002] Connection refused
+[INFO] Buscando tareas que vencen el 2025-11-27 (hora Perú)...
+[INFO] Enviando recordatorio para tarea #8 (Tareaaa inicia Ander) a rodrigo.rodriguez.r@upch.pe
+[INFO] Enviando recordatorio para tarea #9 (Tareaaa iniciaa Ander) a rodrigo.rodriguez.r@upch.pe
+[INFO] Enviando recordatorio para tarea #10 (Tareaaa iniciaa And1er) a rodrigo.rodriguez.r@upch.pe
+[INFO] Proceso de recordatorios finalizado.
+[INFO] Buscando tareas que vencen el 2025-11-27 (hora Perú)...
+[INFO] Enviando recordatorio para tarea #7 (Desarrollar el backend) a ruben.rojas@upch.pe
+[INFO] Enviando recordatorio para tarea #8 (Tareaaa inicia Ander) a rodrigo.rodriguez.r@upch.pe
+[INFO] Enviando recordatorio para tarea #9 (Tareaaa iniciaa Ander) a rodrigo.rodriguez.r@upch.pe
+[INFO] Enviando recordatorio para tarea #10 (Tareaaa iniciaa And1er) a rodrigo.rodriguez.r@upch.pe
+[INFO] Proceso de recordatorios finalizado.
+[INFO] Buscando tareas que vencen el 2025-11-27 (hora Perú)...
+[INFO] Enviando recordatorio para tarea #8 (Tareaaa inicia Ander) a rodrigo.rodriguez.r@upch.pe
+[27-Nov-2025 04:27:50 UTC] Correo enviado exitosamente a: rodrigo.rodriguez.r@upch.pe - Asunto: [Gestor de Proyectos] Recordatorio: "Tareaaa inicia Ander" vence mañana
+[INFO] Enviando recordatorio para tarea #9 (Tareaaa iniciaa Ander) a rodrigo.rodriguez.r@upch.pe
+[27-Nov-2025 04:27:54 UTC] Correo enviado exitosamente a: rodrigo.rodriguez.r@upch.pe - Asunto: [Gestor de Proyectos] Recordatorio: "Tareaaa iniciaa Ander" vence mañana
+[INFO] Enviando recordatorio para tarea #10 (Tareaaa iniciaa And1er) a rodrigo.rodriguez.r@upch.pe
+[27-Nov-2025 04:27:57 UTC] Correo enviado exitosamente a: rodrigo.rodriguez.r@upch.pe - Asunto: [Gestor de Proyectos] Recordatorio: "Tareaaa iniciaa And1er" vence mañana
+[INFO] Proceso de recordatorios finalizado.
+[INFO] Buscando tareas que vencen el 2025-11-27 (hora Perú)...
+[INFO] Enviando recordatorio para tarea #8 (Tareaaa inicia Ander) a rodrigo.rodriguez.r@upch.pe
+[27-Nov-2025 04:32:19 UTC] Correo enviado exitosamente a: rodrigo.rodriguez.r@upch.pe - Asunto: [Gestor de Proyectos] Recordatorio: "Tareaaa inicia Ander" vence mañana
+[INFO] Enviando recordatorio para tarea #9 (Tareaaa iniciaa Ander) a rodrigo.rodriguez.r@upch.pe
+[27-Nov-2025 04:32:23 UTC] Correo enviado exitosamente a: rodrigo.rodriguez.r@upch.pe - Asunto: [Gestor de Proyectos] Recordatorio: "Tareaaa iniciaa Ander" vence mañana
+[INFO] Enviando recordatorio para tarea #10 (Tareaaa iniciaa And1er) a rodrigo.rodriguez.r@upch.pe
+[27-Nov-2025 04:32:27 UTC] Correo enviado exitosamente a: rodrigo.rodriguez.r@upch.pe - Asunto: [Gestor de Proyectos] Recordatorio: "Tareaaa iniciaa And1er" vence mañana
+[INFO] Proceso de recordatorios finalizado.
+[INFO] Buscando tareas que vencen el 2025-11-27 (hora Perú)...
+[INFO] Enviando recordatorio para tarea #8 (Tareaaa inicia Ander) a rodrigo.rodriguez.r@upch.pe
+[27-Nov-2025 04:36:38 UTC] Correo enviado exitosamente a: rodrigo.rodriguez.r@upch.pe - Asunto: [Gestor de Proyectos] Recordatorio: "Tareaaa inicia Ander" vence mañana
+[INFO] Enviando recordatorio para tarea #9 (Tareaaa iniciaa Ander) a rodrigo.rodriguez.r@upch.pe
+[27-Nov-2025 04:36:42 UTC] Correo enviado exitosamente a: rodrigo.rodriguez.r@upch.pe - Asunto: [Gestor de Proyectos] Recordatorio: "Tareaaa iniciaa Ander" vence mañana
+[INFO] Enviando recordatorio para tarea #10 (Tareaaa iniciaa And1er) a rodrigo.rodriguez.r@upch.pe
+[27-Nov-2025 04:36:45 UTC] Correo enviado exitosamente a: rodrigo.rodriguez.r@upch.pe - Asunto: [Gestor de Proyectos] Recordatorio: "Tareaaa iniciaa And1er" vence mañana
+[INFO] Proceso de recordatorios finalizado.
+[INFO] Buscando tareas que vencen el 2025-11-27 (hora Perú)...
+[INFO] Enviando recordatorio para tarea #8 (Tareaaa inicia Ander) a rodrigo.rodriguez.r@upch.pe
+[27-Nov-2025 04:38:06 UTC] Correo enviado exitosamente a: rodrigo.rodriguez.r@upch.pe - Asunto: [Gestor de Proyectos] Recordatorio: "Tareaaa inicia Ander" vence mañana
+[INFO] Enviando recordatorio para tarea #9 (Tareaaa iniciaa Ander) a rodrigo.rodriguez.r@upch.pe
+[27-Nov-2025 04:38:09 UTC] Correo enviado exitosamente a: rodrigo.rodriguez.r@upch.pe - Asunto: [Gestor de Proyectos] Recordatorio: "Tareaaa iniciaa Ander" vence mañana
+[INFO] Enviando recordatorio para tarea #10 (Tareaaa iniciaa And1er) a rodrigo.rodriguez.r@upch.pe
+[27-Nov-2025 04:38:13 UTC] Correo enviado exitosamente a: rodrigo.rodriguez.r@upch.pe - Asunto: [Gestor de Proyectos] Recordatorio: "Tareaaa iniciaa And1er" vence mañana
+[INFO] Proceso de recordatorios finalizado.
