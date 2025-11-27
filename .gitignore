@@ -34,3 +34,4 @@ credentials/
 # Ignorar todo dentro de public excepto el index.php
 /public/*
 !/public/index.php
+!/public/.htaccess
