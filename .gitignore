@@ -30,4 +30,7 @@ storage/credentials.json
 /credentials/client_secret_oauth.json
 /credentials/google-drive-service-account
 credentials/
-public/
+
+# Ignorar todo dentro de public excepto el index.php
+/public/*
+!/public/index.php
