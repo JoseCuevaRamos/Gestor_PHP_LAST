@@ -9,31 +9,42 @@ use Google_Service_Drive_DriveFile;
 class GoogleDriveService
 {
     private $driveService;
-    private $tokenPath;
-    private $credentialsPath;
 
     public function __construct()
     {
-        // Obtener las rutas de credenciales y token desde variables de entorno
-        $this->credentialsPath = getenv('GOOGLE_CREDENTIALS_PATH');
-        $this->tokenPath = getenv('GOOGLE_TOKEN_PATH');
+        // ✅ Leer credenciales desde variables de entorno
+        $clientId = getenv('GOOGLE_CLIENT_ID');
+        $clientSecret = getenv('GOOGLE_CLIENT_SECRET');
+        $accessToken = getenv('GOOGLE_ACCESS_TOKEN');
+        $refreshToken = getenv('GOOGLE_REFRESH_TOKEN');
         
-        // Verificar que los archivos existan
-        if (!file_exists($this->credentialsPath)) {
-            throw new \Exception('Credenciales OAuth no encontradas en: ' . $this->credentialsPath);
+        // Verificar que las variables existan
+        if (!$clientId || !$clientSecret) {
+            throw new \Exception('GOOGLE_CLIENT_ID y GOOGLE_CLIENT_SECRET deben estar configurados en .env');
         }
         
-        if (!file_exists($this->tokenPath)) {
-            throw new \Exception('Token no encontrado. Ejecuta http://localhost:8000/auth.php primero para autorizar.');
+        if (!$accessToken || !$refreshToken) {
+            throw new \Exception('GOOGLE_ACCESS_TOKEN y GOOGLE_REFRESH_TOKEN deben estar configurados en .env');
         }
         
         // Inicializar el cliente de Google
         $client = new Google_Client();
-        $client->setAuthConfig($this->credentialsPath);
+        
+        // ✅ Configurar credenciales desde variables de entorno (en lugar de archivo JSON)
+        $client->setClientId($clientId);
+        $client->setClientSecret($clientSecret);
         $client->setScopes([Google_Service_Drive::DRIVE_FILE]);
         
-        // Cargar el token
-        $token = json_decode(file_get_contents($this->tokenPath), true);
+        // ✅ Configurar token desde variables de entorno (en lugar de archivo JSON)
+        $token = [
+            'access_token' => $accessToken,
+            'refresh_token' => $refreshToken,
+            'expires_in' => 3599,
+            'scope' => 'https://www.googleapis.com/auth/drive.file',
+            'token_type' => 'Bearer',
+            'created' => (int)getenv('GOOGLE_TOKEN_CREATED') ?: time()
+        ];
+        
         $client->setAccessToken($token);
         
         // Refrescar token si expiró
@@ -43,13 +54,19 @@ class GoogleDriveService
                 
                 // Mantener refresh_token si no viene en la respuesta
                 if (!isset($newToken['refresh_token'])) {
-                    $newToken['refresh_token'] = $token['refresh_token'];
+                    $newToken['refresh_token'] = $refreshToken;
                 }
                 
-                file_put_contents($this->tokenPath, json_encode($newToken));
+                // ⚠️ IMPORTANTE: Aquí deberías guardar el nuevo token
+                // Por ahora solo actualiza en memoria (dura solo esta ejecución)
+                putenv('GOOGLE_ACCESS_TOKEN=' . $newToken['access_token']);
+                putenv('GOOGLE_TOKEN_CREATED=' . time());
+                
                 $client->setAccessToken($newToken);
+                
+                error_log('[GoogleDrive] Token refrescado automáticamente');
             } else {
-                throw new \Exception('Token expirado sin refresh_token. Re-autoriza en http://localhost:8000/auth.php');
+                throw new \Exception('Token expirado sin refresh_token. Verifica GOOGLE_REFRESH_TOKEN en .env');
             }
         }
         
