@@ -538,41 +538,81 @@ public function store(Request $request, Response $response)
         $jwt = $request->getAttribute('jwt');
         $userId = $jwt['sub'] ?? null;
 
-        $usuarioRol = UsuarioRol::where('id_usuario', $userId)
+        $id_usuario = $args['id_usuario'];
+
+        // Validar proyecto
+        $proyecto = Proyecto::find($id_proyecto);
+        if (!$proyecto) {
+            return $response->withJson(['error' => 'Proyecto no encontrado.'], 404);
+        }
+
+        // Validar que quien ejecuta es líder
+        $usuarioLider = UsuarioRol::where('id_usuario', $userId)
             ->where('id_proyecto', $id_proyecto)
             ->where('id_rol', 1)
             ->where('status', '0')
             ->first();
 
-        if (!$usuarioRol) {
+        if (!$usuarioLider) {
             return $response->withJson([
-                'error' => 'No tienes permiso para quitar miembros. Solo el líder puede hacerlo.'
+                'error' => 'No tienes permiso para quitar miembros. Solo un líder puede hacerlo.'
             ], 403);
         }
 
-        $id_usuario = $args['id_usuario'];
-
-        $proyecto = Proyecto::find($id_proyecto);
-        if (!$proyecto) {
-            return $response->withStatus(404)->withJson(['error' => 'Proyecto no encontrado.']);
-        }
-
+        // Buscar asignación del usuario a eliminar
         $asignacion = UsuarioRol::where('id_proyecto', $id_proyecto)
             ->where('id_usuario', $id_usuario)
             ->where('status', '0')
             ->first();
 
         if (!$asignacion) {
-            return $response->withStatus(404)->withJson(['error' => 'El usuario no pertenece a este proyecto o ya fue removido.']);
+            return $response->withJson(['error' => 'El usuario no pertenece al proyecto.'], 404);
         }
 
+        //  1. NADIE puede eliminar al líder creador
+        if ($id_usuario == $proyecto->id_usuario_creador) {
+            return $response->withJson([
+                'error' => 'El líder creador no puede ser eliminado del proyecto.'
+            ], 403);
+        }
+
+        //  2. Un líder NO puede eliminarse a sí mismo
+        if ($userId == $id_usuario && (int)$asignacion->id_rol === 1) {
+            return $response->withJson([
+                'error' => 'No puedes eliminarte del proyecto si eres líder.'
+            ], 403);
+        }
+
+        //  3. Si el usuario a eliminar es líder, solo el creador puede hacerlo
+        if ((int)$asignacion->id_rol === 1 && $userId != $proyecto->id_usuario_creador) {
+            return $response->withJson([
+                'error' => 'Solo el líder creador puede eliminar a otro líder.'
+            ], 403);
+        }
+
+        // 4. Si el líder a eliminar es el segundo líder, validar que quede 1 líder (el creador)
+        if ((int)$asignacion->id_rol === 1) {
+            $lideresActivos = UsuarioRol::where('id_proyecto', $id_proyecto)
+                ->where('id_rol', 1)
+                ->where('status', '0')
+                ->count();
+
+            if ($lideresActivos <= 1) {
+                return $response->withJson([
+                    'error' => 'Debe quedar al menos un líder activo en el proyecto.'
+                ], 400);
+            }
+        }
+
+        // Ejecutar eliminación
         $asignacion->update(['status' => '1']);
 
-        return $response->withStatus(200)->withJson([
+        return $response->withJson([
             'message' => 'Miembro removido exitosamente del proyecto.',
             'asignacion' => UsuarioRolTransformer::transform($asignacion)
         ]);
     }
+
 
     /**
      * Permite que un usuario abandone un proyecto
@@ -590,6 +630,12 @@ public function store(Request $request, Response $response)
             return $response->withJson(['error' => 'Proyecto no encontrado.'], 404);
         }
 
+        // Verificar si el usuario es el creador
+        if ($proyecto->id_usuario_creador == $userId) {
+            return $response->withJson([
+                    'error' => 'No puedes abandonar el proyecto porque eres el líder creador.'
+                ], 403);
+        }
 
         // Buscar la asignación del usuario
         $asignacion = UsuarioRol::where('id_proyecto', $id_proyecto)
@@ -661,6 +707,13 @@ public function store(Request $request, Response $response)
             return $response->withStatus(404)->withJson(['error' => 'Proyecto no encontrado.']);
         }
 
+        // Verificar si se intenta cambiar el rol del creador
+        if ($proyecto->id_usuario_creador == $id_usuario) {
+            return $response->withJson([
+                'error' => 'No puedes cambiar el rol del líder creador del proyecto.'
+            ], 403);
+        }
+
         $asignacion = UsuarioRol::where('id_proyecto', $id_proyecto)
             ->where('id_usuario', $id_usuario)
             ->where('status', '0')
@@ -669,6 +722,22 @@ public function store(Request $request, Response $response)
         if (!$asignacion) {
             return $response->withStatus(404)->withJson(['error' => 'El usuario no pertenece a este proyecto o fue eliminado.']);
         }
+
+
+        // El segundo líder NO puede cambiar su propio rol
+        if ($userId == $id_usuario && $asignacion->id_rol == 1) {
+            return $response->withJson([
+                'error' => 'No puedes cambiar tu propio rol si eres líder.'
+            ], 403);
+        }
+
+        // Solo el líder creador puede cambiar el rol de OTRO líder
+        if ($asignacion->id_rol == 1 && $userId != $proyecto->id_usuario_creador) {
+            return $response->withJson([
+                'error' => 'Solo el líder creador puede cambiar el rol de otro líder.'
+            ], 403);
+        }
+
         //  Validar máximo 2 líderes al cambiar rol
         if ((int)$nuevo_rol === 1) {
 
