@@ -39,7 +39,22 @@ class EspacioController
      */
     public function index(Request $request, Response $response, array $args)
     {
+        // Obtener JWT
+        $jwt = $request->getAttribute('jwt');
+        if (!$jwt || !isset($jwt['sub'])) {
+            return $response->withJson(['error' => 'Token inválido o ausente.'], 401);
+        }
+
+        // ID del usuario autenticado
+        $id_usuario_auth = (int) $jwt['sub'];
+
+        // ID del usuario solicitado en la ruta
         $id_usuario = (int) $args['id'];
+
+        // Un usuario solo puede listar sus propios espacios
+        if ($id_usuario_auth !== $id_usuario) {
+            return $response->withJson(['error' => 'No tienes permiso para ver los espacios de este usuario.'], 403);
+        }
 
         $usuario = User::find($id_usuario);
         if (!$usuario) {
