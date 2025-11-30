@@ -48,7 +48,7 @@ $app->group('/api',
     $this->get('/usuarios/buscar', UserController::class . ':search')->add($optionalAuth)->setName('user.search');
 
     /** ======================= ESPACIOS ======================= */
-    $this->get('/users/{id}/espacios', EspacioController::class . ':index')->add($optionalAuth)->setName('espacio.index');
+    $this->get('/users/{id}/espacios', EspacioController::class . ':index')->add($validateJwt)->setName('espacio.index');
     $this->get('/espacios/{id}', EspacioController::class . ':show')->add($optionalAuth)->setName('espacio.show');
     $this->post('/espacios', EspacioController::class . ':store')->add($validateJwt)->setName('espacio.store');
     $this->put('/espacios/{id}', EspacioController::class . ':update')->add($validateJwt)->setName('espacio.update');
