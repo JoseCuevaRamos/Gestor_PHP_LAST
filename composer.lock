@@ -8,7 +8,7 @@
     "packages": [
         {
             "name": "cakephp/core",
-            "version": "4.6.2",
+            "version": "4.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/core.git",
@@ -68,16 +68,16 @@
         },
         {
             "name": "cakephp/database",
-            "version": "4.6.2",
+            "version": "4.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/database.git",
-                "reference": "9e2ada4435d80b8a5284decf924160b854086d08"
+                "reference": "7de9cbfc19fa202fdfab54352f94e49aaf15c300"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/database/zipball/9e2ada4435d80b8a5284decf924160b854086d08",
-                "reference": "9e2ada4435d80b8a5284decf924160b854086d08",
+                "url": "https://api.github.com/repos/cakephp/database/zipball/7de9cbfc19fa202fdfab54352f94e49aaf15c300",
+                "reference": "7de9cbfc19fa202fdfab54352f94e49aaf15c300",
                 "shasum": ""
             },
             "require": {
@@ -120,11 +120,11 @@
                 "issues": "https://github.com/cakephp/cakephp/issues",
                 "source": "https://github.com/cakephp/database"
             },
-            "time": "2025-04-01T11:56:48+00:00"
+            "time": "2025-10-30T02:41:56+00:00"
         },
         {
             "name": "cakephp/datasource",
-            "version": "4.6.2",
+            "version": "4.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/datasource.git",
@@ -182,7 +182,7 @@
         },
         {
             "name": "cakephp/utility",
-            "version": "4.6.2",
+            "version": "4.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/utility.git",
@@ -588,16 +588,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.421.0",
+            "version": "v0.422.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "d84e7301a52405677807564dab6b1a112dfd03bd"
+                "reference": "1854d325eb22e33fa6c1c0ce45718b64eca5c67b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/d84e7301a52405677807564dab6b1a112dfd03bd",
-                "reference": "d84e7301a52405677807564dab6b1a112dfd03bd",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/1854d325eb22e33fa6c1c0ce45718b64eca5c67b",
+                "reference": "1854d325eb22e33fa6c1c0ce45718b64eca5c67b",
                 "shasum": ""
             },
             "require": {
@@ -626,9 +626,9 @@
             ],
             "support": {
                 "issues": "https://github.com/googleapis/google-api-php-client-services/issues",
-                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.421.0"
+                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.422.0"
             },
-            "time": "2025-11-23T01:06:22+00:00"
+            "time": "2025-11-30T01:02:18+00:00"
         },
         {
             "name": "google/auth",

@@ -13,75 +13,137 @@ class GoogleDriveService
     public function __construct()
     {
         // ✅ Leer credenciales desde variables de entorno
-        $clientId = getenv('GOOGLE_CLIENT_ID');
-        $clientSecret = getenv('GOOGLE_CLIENT_SECRET');
-        $accessToken = getenv('GOOGLE_ACCESS_TOKEN');
-        $refreshToken = getenv('GOOGLE_REFRESH_TOKEN');
+        // Intentar getenv() primero, luego $_ENV, luego $_SERVER
+        $clientId = $this->getEnvVar('GOOGLE_CLIENT_ID');
+        $clientSecret = $this->getEnvVar('GOOGLE_CLIENT_SECRET');
+        $accessToken = $this->getEnvVar('GOOGLE_ACCESS_TOKEN');
+        $refreshToken = $this->getEnvVar('GOOGLE_REFRESH_TOKEN');
         
-        // Verificar que las variables existan
-        if (!$clientId || !$clientSecret) {
-            throw new \Exception('GOOGLE_CLIENT_ID y GOOGLE_CLIENT_SECRET deben estar configurados en .env');
+        error_log('[GoogleDrive] CLIENT_ID: ' . substr($clientId, 0, 20) . '...');
+        error_log('[GoogleDrive] ACCESS_TOKEN: ' . (strlen($accessToken) > 20 ? substr($accessToken, 0, 20) . '...' : 'VACÍO'));
+        error_log('[GoogleDrive] REFRESH_TOKEN: ' . (strlen($refreshToken) > 20 ? substr($refreshToken, 0, 20) . '...' : 'VACÍO'));
+        
+        // Verificar que las variables existan y no estén vacías
+        if (empty($clientId) || empty($clientSecret)) {
+            throw new \Exception(
+                'GOOGLE_CLIENT_ID y GOOGLE_CLIENT_SECRET no están configurados. ' .
+                'Verifica las variables de entorno en Docker.'
+            );
         }
         
-        if (!$accessToken || !$refreshToken) {
-            throw new \Exception('GOOGLE_ACCESS_TOKEN y GOOGLE_REFRESH_TOKEN deben estar configurados en .env');
+        // IMPORTANTE: Validar tokens antes de usarlos
+        if (empty($accessToken)) {
+            throw new \Exception(
+                'GOOGLE_ACCESS_TOKEN no está configurado o está vacío. ' .
+                'Debes obtener un token válido de Google OAuth 2.0'
+            );
+        }
+
+        if (empty($refreshToken)) {
+            throw new \Exception(
+                'GOOGLE_REFRESH_TOKEN no está configurado o está vacío. ' .
+                'Necesitas ambos tokens para funcionar correctamente'
+            );
         }
         
         // Inicializar el cliente de Google
         $client = new Google_Client();
         
-        // ✅ Configurar credenciales desde variables de entorno (en lugar de archivo JSON)
+        // ✅ Configurar credenciales desde variables de entorno
         $client->setClientId($clientId);
         $client->setClientSecret($clientSecret);
         $client->setScopes([Google_Service_Drive::DRIVE_FILE]);
         
-        // ✅ Configurar token desde variables de entorno (en lugar de archivo JSON)
+        // ✅ Configurar token desde variables de entorno (validado)
         $token = [
             'access_token' => $accessToken,
             'refresh_token' => $refreshToken,
             'expires_in' => 3599,
             'scope' => 'https://www.googleapis.com/auth/drive.file',
             'token_type' => 'Bearer',
-            'created' => (int)getenv('GOOGLE_TOKEN_CREATED') ?: time()
+            'created' => (int)$this->getEnvVar('GOOGLE_TOKEN_CREATED') ?: time()
         ];
         
-        $client->setAccessToken($token);
+        error_log('[GoogleDrive] Token array creado: ' . json_encode([
+            'access_token' => substr($token['access_token'], 0, 20) . '...',
+            'refresh_token' => substr($token['refresh_token'], 0, 20) . '...',
+            'created' => $token['created']
+        ]));
+        
+        try {
+            $client->setAccessToken($token);
+            error_log('[GoogleDrive] Token configurado exitosamente en cliente');
+        } catch (\Exception $e) {
+            throw new \Exception('Error al configurar el token de Google: ' . $e->getMessage());
+        }
         
         // Refrescar token si expiró
         if ($client->isAccessTokenExpired()) {
-            if ($client->getRefreshToken()) {
+            error_log('[GoogleDrive] Token expirado, intentando refrescar...');
+            
+            if (!$client->getRefreshToken()) {
+                throw new \Exception(
+                    'Token expirado sin refresh_token válido. ' .
+                    'Verifica GOOGLE_REFRESH_TOKEN en .env'
+                );
+            }
+            
+            try {
                 $newToken = $client->fetchAccessTokenWithRefreshToken($client->getRefreshToken());
+                
+                // Validar que se obtuvo un nuevo token
+                if (!isset($newToken['access_token'])) {
+                    throw new \Exception('No se recibió un nuevo access_token del servidor de Google');
+                }
                 
                 // Mantener refresh_token si no viene en la respuesta
                 if (!isset($newToken['refresh_token'])) {
                     $newToken['refresh_token'] = $refreshToken;
                 }
                 
-                // ⚠️ IMPORTANTE: Aquí deberías guardar el nuevo token
-                // Por ahora solo actualiza en memoria (dura solo esta ejecución)
+                // ⚠️ IMPORTANTE: Guardar el nuevo token en variables de entorno
                 putenv('GOOGLE_ACCESS_TOKEN=' . $newToken['access_token']);
                 putenv('GOOGLE_TOKEN_CREATED=' . time());
                 
                 $client->setAccessToken($newToken);
                 
                 error_log('[GoogleDrive] Token refrescado automáticamente');
-            } else {
-                throw new \Exception('Token expirado sin refresh_token. Verifica GOOGLE_REFRESH_TOKEN en .env');
+            } catch (\Exception $e) {
+                throw new \Exception('Error al refrescar token: ' . $e->getMessage());
             }
         }
         
         // Crear servicio de Drive
         $this->driveService = new Google_Service_Drive($client);
+        error_log('[GoogleDrive] Servicio de Google Drive inicializado correctamente');
+    }
+
+    /**
+     * Obtiene una variable de entorno desde múltiples fuentes
+     */
+    private function getEnvVar($varName)
+    {
+        // Intentar getenv() primero
+        $value = getenv($varName);
+        if ($value !== false) {
+            return $value;
+        }
+        
+        // Intentar $_ENV
+        if (isset($_ENV[$varName])) {
+            return $_ENV[$varName];
+        }
+        
+        // Intentar $_SERVER
+        if (isset($_SERVER[$varName])) {
+            return $_SERVER[$varName];
+        }
+        
+        return '';
     }
 
     /**
      * Sube un archivo a Google Drive y retorna el ID del archivo
-     *
-     * @param string $filePath Ruta local del archivo
-     * @param string $fileName Nombre del archivo en Drive
-     * @param string|null $folderId ID de la carpeta destino (opcional)
-     * @return string ID del archivo en Google Drive
-     * @throws \Exception
      */
     public function uploadFile($filePath, $fileName, $folderId = null)
     {
@@ -126,10 +188,6 @@ class GoogleDriveService
 
     /**
      * Crea una carpeta en Google Drive y retorna su ID
-     *
-     * @param string $folderName Nombre de la carpeta
-     * @param string|null $parentFolderId ID de la carpeta padre (opcional)
-     * @return string ID de la carpeta creada
      */
     public function createFolder($folderName, $parentFolderId = null)
     {
@@ -159,9 +217,6 @@ class GoogleDriveService
 
     /**
      * Busca una carpeta por nombre y retorna su ID
-     *
-     * @param string $folderName Nombre de la carpeta
-     * @return string|null ID de la carpeta o null si no existe
      */
     public function findFolderByName($folderName)
     {
@@ -183,9 +238,6 @@ class GoogleDriveService
 
     /**
      * Obtiene o crea una carpeta (si no existe)
-     *
-     * @param string $folderName Nombre de la carpeta
-     * @return string ID de la carpeta
      */
     public function getOrCreateFolder($folderName)
     {
@@ -200,9 +252,6 @@ class GoogleDriveService
 
     /**
      * Hace un archivo público (compartido con cualquiera que tenga el enlace)
-     *
-     * @param string $fileId ID del archivo en Drive
-     * @return void
      */
     private function makeFilePublic($fileId)
     {
@@ -215,15 +264,11 @@ class GoogleDriveService
             $this->driveService->permissions->create($fileId, $permission);
         } catch (\Exception $e) {
             error_log("Advertencia: No se pudo hacer el archivo público - " . $e->getMessage());
-            // No lanzamos excepción porque el archivo ya se subió exitosamente
         }
     }
 
     /**
      * Elimina un archivo de Google Drive
-     *
-     * @param string $fileId ID del archivo en Drive
-     * @return bool
      */
     public function deleteFile($fileId)
     {
@@ -238,9 +283,6 @@ class GoogleDriveService
 
     /**
      * Obtiene información de un archivo
-     *
-     * @param string $fileId ID del archivo en Drive
-     * @return Google_Service_Drive_DriveFile|null
      */
     public function getFileInfo($fileId)
     {

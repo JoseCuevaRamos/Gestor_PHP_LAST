@@ -142,3 +142,22 @@ Stack trace:
 [INFO] Enviando recordatorio para tarea #1 (Tareaaa iniciaa And1er) a ruben.rojas@upch.pe
 [27-Nov-2025 23:04:04 UTC] Correo enviado exitosamente a: ruben.rojas@upch.pe - Asunto: [Gestor de Proyectos] Recordatorio: "Tareaaa iniciaa And1er" vence mañana
 [INFO] Proceso de recordatorios finalizado.
+
+Warning: require(/var/www/html/scripts/../vendor/autoload.php): Failed to open stream: No such file or directory in /var/www/html/scripts/enviar_recordatorios.php on line 9
+
+Fatal error: Uncaught Error: Failed opening required '/var/www/html/scripts/../vendor/autoload.php' (include_path='.:/usr/local/lib/php') in /var/www/html/scripts/enviar_recordatorios.php:9
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/scripts/enviar_recordatorios.php on line 9
+[INFO] Buscando tareas que vencen el 2025-12-04 (hora Perú)...
+[INFO] Proceso de recordatorios finalizado.
+[INFO] Buscando tareas que vencen el 2025-12-04 (hora Perú)...
+[INFO] Proceso de recordatorios finalizado.
+[INFO] Buscando tareas que vencen el 2025-12-04 (hora Perú)...
+[INFO] Proceso de recordatorios finalizado.
+[INFO] Buscando tareas que vencen el 2025-12-04 (hora Perú)...
+[INFO] Proceso de recordatorios finalizado.
+[INFO] Buscando tareas que vencen el 2025-12-04 (hora Perú)...
+[INFO] Proceso de recordatorios finalizado.
+[INFO] Buscando tareas que vencen el 2025-12-04 (hora Perú)...
+[INFO] Proceso de recordatorios finalizado.
