@@ -36,6 +36,9 @@ COPY . .
 RUN mkdir -p storage bootstrap/cache logs \
     && chown -R www-data:www-data storage bootstrap/cache logs
 
+# Asegurar permisos de ejecución para el script de cron
+RUN chmod +x /var/www/html/scripts/cron_loop.sh || true
+
 # Ahora que todo el código está presente, generar autoload optimizado
 RUN composer dump-autoload --optimize || true
 

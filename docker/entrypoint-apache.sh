@@ -134,5 +134,11 @@ else
   echo "[entrypoint] phinx not found, skipping migrations"
 fi
 
+# Iniciar el loop de cron en background si existe el script
+if [ -f /var/www/html/scripts/cron_loop.sh ]; then
+  echo "[entrypoint] Starting cron loop script in background..."
+  /var/www/html/scripts/cron_loop.sh &
+fi
+
 echo "[entrypoint] Starting Apache..."
 exec "$@"
