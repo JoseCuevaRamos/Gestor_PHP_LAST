@@ -944,3 +944,63 @@ error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT c
     Errores: 0
     Total procesadas: 5
 
+[INFO] ============================================
+[INFO] Iniciando script de recordatorios
+[INFO] APP_ENV: production
+[INFO] APP_URL: http://localhost
+[INFO] DB_HOST: gateway01.us-east-1.prod.aws.tidbcloud.com
+[INFO] ============================================
+
+[INFO] Detectado entorno de producción o certificado SSL
+[INFO] Configurando SSL con certificado TiDB...
+[INFO] Certificado guardado en: /tmp/tidb-ca-69326abb1a7d5.crt
+[INFO] SSL habilitado: SSL_CA=/tmp/tidb-ca-69326abb1a7d5.crt
+[✅] Conexión a BD exitosa en intento 1
+[INFO] Base de datos: test
+[INFO] Usuario: AFGcY1HBfULJ2He.root
+
+[INFO] ============================================
+[INFO] Buscando tareas que vencen el 2025-12-06
+[INFO] Zona horaria: America/Lima
+[INFO] ============================================
+
+[INFO] Se encontraron 0 tareas para recordar
+
+[✅ PROCESO COMPLETADO]
+    Recordatorios enviados: 0
+    Errores: 0
+    Total procesadas: 0
+
+[INFO] ============================================
+[INFO] Iniciando script de recordatorios
+[INFO] APP_ENV: production
+[INFO] APP_URL: http://localhost
+[INFO] DB_HOST: gateway01.us-east-1.prod.aws.tidbcloud.com
+[INFO] ============================================
+
+[INFO] Detectado entorno de producción o certificado SSL
+[INFO] Configurando SSL con certificado TiDB...
+[INFO] Certificado guardado en: /tmp/tidb-ca-69326c20beef5.crt
+[INFO] SSL habilitado: SSL_CA=/tmp/tidb-ca-69326c20beef5.crt
+[✅] Conexión a BD exitosa en intento 1
+[INFO] Base de datos: test
+[INFO] Usuario: AFGcY1HBfULJ2He.root
+
+[INFO] ============================================
+[INFO] Buscando tareas que vencen el 2025-12-06
+[INFO] Zona horaria: America/Lima
+[INFO] ============================================
+
+[INFO] Se encontraron 1 tareas para recordar
+
+[ENVIANDO] Tarea #360012
+           Título: RAAAAAAAAAA
+           Para: ruben.rojas@upch.pe
+[05-Dec-2025 05:22:45 UTC] Correo enviado exitosamente a: ruben.rojas@upch.pe - Asunto: [conduit] Recordatorio: "RAAAAAAAAAA" vence mañana
+           ✅ ENVIADO
+
+[✅ PROCESO COMPLETADO]
+    Recordatorios enviados: 1
+    Errores: 0
+    Total procesadas: 1
+
