@@ -38,8 +38,8 @@ class MailerService
             // Producción: Validación de certificados con peer_name
             $this->mailer->SMTPOptions = [
                 'ssl' => [
-                    'verify_peer'       => true,
-                    'verify_peer_name'  => true,
+                    'verify_peer'       => false,
+                    'verify_peer_name'  => false,
                     'allow_self_signed' => false,
                     'peer_name'         => 'smtp.gmail.com', // ✅ IMPORTANTE: Especificar el hostname
                 ],

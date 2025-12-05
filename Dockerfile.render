@@ -15,10 +15,10 @@ RUN set -eux; \
 # ✅ ACTUALIZAR CERTIFICADOS SSL
 RUN update-ca-certificates --fresh
 
-# ✅ DESCARGAR Y INSTALAR CERTIFICADO DE GMAIL
+# ✅ DESCARGAR Y INSTALAR CERTIFICADOS DE GMAIL Y SENDGRID
 RUN mkdir -p /etc/ssl/certs && \
     curl -o /etc/ssl/certs/gmail-smtp.crt https://cacerts.digicert.com/DigiCertGlobalRootCA.crt && \
-    echo "Mozilla/5.0" && \
+    curl -o /etc/ssl/certs/sendgrid-smtp.crt https://cacerts.digicert.com/DigiCertGlobalRootCA.crt && \
     update-ca-certificates --fresh
 
 # Copiar Composer desde la imagen oficial (versión 2.x)

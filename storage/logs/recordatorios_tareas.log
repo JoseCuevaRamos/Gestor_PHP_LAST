@@ -551,3 +551,396 @@ error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT c
     Errores: 0
     Total procesadas: 2
 
+[INFO] ============================================
+[INFO] Iniciando script de recordatorios
+[INFO] APP_ENV: production
+[INFO] APP_URL: http://localhost
+[INFO] DB_HOST: gateway01.us-east-1.prod.aws.tidbcloud.com
+[INFO] ============================================
+
+[INFO] Detectado entorno de producciÃ³n o certificado SSL
+[INFO] Configurando SSL con certificado TiDB...
+[INFO] Certificado guardado en: /tmp/tidb-ca-6932486a14852.crt
+[INFO] SSL habilitado: SSL_CA=/tmp/tidb-ca-6932486a14852.crt
+[âœ…] ConexiÃ³n a BD exitosa en intento 1
+[INFO] Base de datos: test
+[INFO] Usuario: AFGcY1HBfULJ2He.root
+
+[INFO] ============================================
+[INFO] Buscando tareas que vencen el 2025-12-05
+[INFO] Zona horaria: America/Lima
+[INFO] ============================================
+
+[INFO] Se encontraron 2 tareas para recordar
+
+[ENVIANDO] Tarea #240002
+           TÃ­tulo: aaasads
+           Para: ruben.rojas@upch.pe
+[05-Dec-2025 02:50:22 UTC] Error enviando correo a ruben.rojas@upch.pe: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 02:50:22 UTC] DiagnÃ³stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: `´°K§öÝö:¼Øí:€íÖÓN€ \MmˆÎÆÄwÝ™œCAÌøòö;½si©jüÝBo™Ÿ>Îá‡}’WP^¯d{†^ü‚âlÓÓúWôR-ç³VM²õÀ±[<Z
+           âœ… ENVIADO
+
+[ENVIANDO] Tarea #270004
+           TÃ­tulo: AAAAAAAA
+           Para: ruben.rojas@upch.pe
+[05-Dec-2025 02:50:23 UTC] Error enviando correo a ruben.rojas@upch.pe: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 02:50:23 UTC] DiagnÃ³stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: aÚ†7/¢ÿSÂÅ:Í8 ‹ÀéL:È™Qã§Z»§³ã´HWÅ“òG£)úŒt¡Ò‘¬Ë©Ù<W20¯…üçâ¢žÄPIÆÔ\A`nðdjáô¯µ%5½1Áƒ
+LŒš—°ß
+           âœ… ENVIADO
+
+[âœ… PROCESO COMPLETADO]
+    Recordatorios enviados: 2
+    Errores: 0
+    Total procesadas: 2
+
+[INFO] ============================================
+[INFO] Iniciando script de recordatorios
+[INFO] APP_ENV: production
+[INFO] APP_URL: http://localhost
+[INFO] DB_HOST: gateway01.us-east-1.prod.aws.tidbcloud.com
+[INFO] ============================================
+
+[INFO] Detectado entorno de producciÃ³n o certificado SSL
+[INFO] Configurando SSL con certificado TiDB...
+[INFO] Certificado guardado en: /tmp/tidb-ca-6932491e8b2fa.crt
+[INFO] SSL habilitado: SSL_CA=/tmp/tidb-ca-6932491e8b2fa.crt
+[âœ…] ConexiÃ³n a BD exitosa en intento 1
+[INFO] Base de datos: test
+[INFO] Usuario: AFGcY1HBfULJ2He.root
+
+[INFO] ============================================
+[INFO] Buscando tareas que vencen el 2025-12-05
+[INFO] Zona horaria: America/Lima
+[INFO] ============================================
+
+[INFO] Se encontraron 4 tareas para recordar
+
+[ENVIANDO] Tarea #240002
+           TÃ­tulo: aaasads
+           Para: ruben.rojas@upch.pe
+[05-Dec-2025 02:53:22 UTC] Error enviando correo a ruben.rojas@upch.pe: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 02:53:22 UTC] DiagnÃ³stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: _,KDÔb4
+           âœ… ENVIADO
+
+[ENVIANDO] Tarea #270004
+           TÃ­tulo: AAAAAAAA
+           Para: ruben.rojas@upch.pe
+[05-Dec-2025 02:53:22 UTC] Error enviando correo a ruben.rojas@upch.pe: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 02:53:22 UTC] DiagnÃ³stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: a$PÀUR†ËjSK¦§Cþ=	y¹åï•µÒa,•‹üGÖ^•Ü5ª6Õ±]4(îˆƒÌÄ×ÙiR•¤oÇ‰º2â»+…½sZøh–ã›ŽDU!½Q·ó
+           âœ… ENVIADO
+
+[ENVIANDO] Tarea #300001
+           TÃ­tulo: asasasads
+           Para: ruben.rojas@upch.pe
+[05-Dec-2025 02:53:23 UTC] Error enviando correo a ruben.rojas@upch.pe: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 02:53:23 UTC] DiagnÃ³stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: `åŒ‡¬yF\šŠÿšµÝ_$°Wìcld?¢OLulD‰Œ~½“7n½›B‡absQ‰šßd
+           âœ… ENVIADO
+
+[ENVIANDO] Tarea #300002
+           TÃ­tulo: XDDDDDDDDDDD
+           Para: anderson.rojas1805@gmail.com
+[05-Dec-2025 02:53:24 UTC] Error enviando correo a anderson.rojas1805@gmail.com: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 02:53:24 UTC] DiagnÃ³stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: aVyé±Ô1—Ó“Û»	³L†¸Â¨­VA€‡Ú¹;c¯üœ3Ä÷8¹)wnâª AóLž›H?Lc±#VXPùØŸ!§´A¹âåÕeðg`î7Þ Y·©$£ùÒMÀ
+           âœ… ENVIADO
+
+[âœ… PROCESO COMPLETADO]
+    Recordatorios enviados: 4
+    Errores: 0
+    Total procesadas: 4
+
+[INFO] .env no cargado, usando variables de Render
+[INFO] ============================================
+[INFO] Iniciando script de recordatorios
+[INFO] APP_ENV: production
+[INFO] APP_URL: http://localhost
+[INFO] DB_HOST: gateway01.us-east-1.prod.aws.tidbcloud.com
+[INFO] ============================================
+
+[INFO] Detectado entorno de producciÃ³n o certificado SSL
+[INFO] Configurando SSL con certificado TiDB...
+[INFO] Certificado guardado en: /tmp/tidb-ca-693251973a0c0.crt
+[INFO] SSL habilitado: SSL_CA=/tmp/tidb-ca-693251973a0c0.crt
+[âœ…] ConexiÃ³n a BD exitosa en intento 1
+[INFO] Base de datos: test
+[INFO] Usuario: AFGcY1HBfULJ2He.root
+
+[INFO] ============================================
+[INFO] Buscando tareas que vencen el 2025-12-05
+[INFO] Zona horaria: America/Lima
+[INFO] ============================================
+
+[INFO] Se encontraron 4 tareas para recordar
+
+[ENVIANDO] Tarea #240002
+           TÃ­tulo: aaasads
+           Para: ruben.rojas@upch.pe
+[05-Dec-2025 03:29:31 UTC] Error enviando correo a ruben.rojas@upch.pe: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 03:29:31 UTC] DiagnÃ³stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: _.v¼MÑ
+þõeXózrr/uI€ýQ(X´+k<¬ýzVYOöñtx¾ñœ3áJK?Ä0žo¹¹	Jbƒ„Æ„=5ªéêXt~?}{“ËïØL¬áLåC”qIáN±:â| &+¶ƒ:[ÖzU²ÏMd‡­
+           âœ… ENVIADO
+
+[ENVIANDO] Tarea #270004
+           TÃ­tulo: AAAAAAAA
+           Para: ruben.rojas@upch.pe
+[05-Dec-2025 03:29:32 UTC] Error enviando correo a ruben.rojas@upch.pe: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 03:29:32 UTC] DiagnÃ³stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: }Q)$çØŽ{kœ†˜Œ¼óÉå¦™ŸNñ5ÚbÖDªbµ ž8“ŠîQØÂ’¬Ë°fŒN¢íþ1•ˆ{l£)­©ÝÀÃ®ü¶pEa´„NoZ3±œcÞ›kƒ:w<4s"[Å@6½!¬“Ì ”Iöa½èA£xB™`…S†~A¤H÷Ÿ“±ú
+’7
+           âœ… ENVIADO
+
+[ENVIANDO] Tarea #300001
+           TÃ­tulo: asasasads
+           Para: ruben.rojas@upch.pe
+[05-Dec-2025 03:29:33 UTC] Error enviando correo a ruben.rojas@upch.pe: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 03:29:33 UTC] DiagnÃ³stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: ‘ÌÂpµaƒÏ¾©ÌðE7š£¥¶l¡ØúñÞm–;?Éê•)þpO.¦`®V‹—ûCzTÕ×Ì-øæDÓn <0=¹0ë7Öí€xýåË	9­<y$<–N¡ßowÍ§Ãö8©šéø?EÉáN2išo&±ààñ`ØI? ÅEø1(<”JZØƒéƒ÷Gèt™rPï“ÒGMZÛõëmµäÍ–OëæÆ,ô(ñ„p²zù«%[YÎ8ªÿF÷z?8±`¿Æ/ÇÐNÍÇ'ØÀ—‘,J‚j¾–qÞFÌl…G8É™è`¿óIYŽ¨ÑL=çœ¡óUÏiVNý¬
+WÅÎ«ÅvËz*³%¨BU1
+           âœ… ENVIADO
+
+[ENVIANDO] Tarea #300002
+           TÃ­tulo: XDDDDDDDDDDD
+           Para: anderson.rojas1805@gmail.com
+[05-Dec-2025 03:29:33 UTC] Error enviando correo a anderson.rojas1805@gmail.com: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 03:29:33 UTC] DiagnÃ³stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: ’³8ÀÀI9Êó)È‡áí©ZU“[”%ü¹ê¹KÞ¯¹ý®gŸ«açIgúþQír;E
+           âœ… ENVIADO
+
+[âœ… PROCESO COMPLETADO]
+    Recordatorios enviados: 4
+    Errores: 0
+    Total procesadas: 4
+
+[INFO] .env no cargado, usando variables de Render
+[INFO] ============================================
+[INFO] Iniciando script de recordatorios
+[INFO] APP_ENV: local
+[INFO] APP_URL: http://localhost:8000
+[INFO] DB_HOST: db
+[INFO] ============================================
+
+[INFO] Modo desarrollo - SSL opcional
+[âš ï¸  INTENTO 1/5] Error de conexiÃ³n:
+    CÃ³digo: 2002
+    Mensaje: SQLSTATE[HY000] [2002] Connection refused
+
+[INFO] Reintentando en 3 segundos...
+
+[âœ…] ConexiÃ³n a BD exitosa en intento 2
+[INFO] Base de datos: conduit
+[INFO] Usuario: conduit_user
+
+[INFO] ============================================
+[INFO] Buscando tareas que vencen el 2025-12-05
+[INFO] Zona horaria: America/Lima
+[INFO] ============================================
+
+[INFO] Se encontraron 0 tareas para recordar
+
+[âœ… PROCESO COMPLETADO]
+    Recordatorios enviados: 0
+    Errores: 0
+    Total procesadas: 0
+
+[INFO] .env no cargado, usando variables de Render
+[INFO] ============================================
+[INFO] Iniciando script de recordatorios
+[INFO] APP_ENV: local
+[INFO] APP_URL: http://localhost:8000
+[INFO] DB_HOST: db
+[INFO] ============================================
+
+[INFO] Modo desarrollo - SSL opcional
+[âœ…] ConexiÃ³n a BD exitosa en intento 1
+[INFO] Base de datos: conduit
+[INFO] Usuario: conduit_user
+
+[INFO] ============================================
+[INFO] Buscando tareas que vencen el 2025-12-05
+[INFO] Zona horaria: America/Lima
+[INFO] ============================================
+
+[INFO] Se encontraron 0 tareas para recordar
+
+[âœ… PROCESO COMPLETADO]
+    Recordatorios enviados: 0
+    Errores: 0
+    Total procesadas: 0
+
+[INFO] ============================================
+[INFO] Iniciando script de recordatorios
+[INFO] APP_ENV: local
+[INFO] APP_URL: http://localhost:8000
+[INFO] DB_HOST: db
+[INFO] ============================================
+
+[INFO] Modo desarrollo - SSL opcional
+[âœ…] ConexiÃ³n a BD exitosa en intento 1
+[INFO] Base de datos: conduit
+[INFO] Usuario: conduit_user
+
+[INFO] ============================================
+[INFO] Buscando tareas que vencen el 2025-12-05
+[INFO] Zona horaria: America/Lima
+[INFO] ============================================
+
+[INFO] Se encontraron 0 tareas para recordar
+
+[âœ… PROCESO COMPLETADO]
+    Recordatorios enviados: 0
+    Errores: 0
+    Total procesadas: 0
+
+[INFO] ============================================
+[INFO] Iniciando script de recordatorios
+[INFO] APP_ENV: local
+[INFO] APP_URL: http://localhost:8000
+[INFO] DB_HOST: db
+[INFO] ============================================
+
+[INFO] Modo desarrollo - SSL opcional
+[âœ…] ConexiÃ³n a BD exitosa en intento 1
+[INFO] Base de datos: conduit
+[INFO] Usuario: conduit_user
+
+[INFO] ============================================
+[INFO] Buscando tareas que vencen el 2025-12-05
+[INFO] Zona horaria: America/Lima
+[INFO] ============================================
+
+[INFO] Se encontraron 1 tareas para recordar
+
+[ENVIANDO] Tarea #6
+           TÃ­tulo: XXAX
+           Para: ruben.rojas@upch.pe
+[05-Dec-2025 03:43:17 UTC] Error enviando correo a ruben.rojas@upch.pe: SMTP Error: data not accepted.
+[05-Dec-2025 03:43:17 UTC] DiagnÃ³stico SMTP: SMTP Error: data not accepted. SMTP server error: DATA END command failed Detail: The from address does not match a verified Sender Identity. Mail cannot be sent until this error is resolved. Visit https://sendgrid.com/docs/for-developers/sending-email/sender-identity/ to see the Sender Identity requirements
+ SMTP code: 550
+           âœ… ENVIADO
+
+[âœ… PROCESO COMPLETADO]
+    Recordatorios enviados: 1
+    Errores: 0
+    Total procesadas: 1
+
+[INFO] ============================================
+[INFO] Iniciando script de recordatorios
+[INFO] APP_ENV: local
+[INFO] APP_URL: http://localhost:8000
+[INFO] DB_HOST: db
+[INFO] ============================================
+
+[INFO] Modo desarrollo - SSL opcional
+[âœ…] ConexiÃ³n a BD exitosa en intento 1
+[INFO] Base de datos: conduit
+[INFO] Usuario: conduit_user
+
+[INFO] ============================================
+[INFO] Buscando tareas que vencen el 2025-12-05
+[INFO] Zona horaria: America/Lima
+[INFO] ============================================
+
+[INFO] Se encontraron 1 tareas para recordar
+
+[ENVIANDO] Tarea #6
+           TÃ­tulo: XXAX
+           Para: ruben.rojas@upch.pe
+[05-Dec-2025 03:56:32 UTC] Correo enviado exitosamente a: ruben.rojas@upch.pe - Asunto: [conduit] Recordatorio: "XXAX" vence maÃ±ana
+           âœ… ENVIADO
+
+[âœ… PROCESO COMPLETADO]
+    Recordatorios enviados: 1
+    Errores: 0
+    Total procesadas: 1
+
+[INFO] ============================================
+[INFO] Iniciando script de recordatorios
+[INFO] APP_ENV: production
+[INFO] APP_URL: http://localhost
+[INFO] DB_HOST: gateway01.us-east-1.prod.aws.tidbcloud.com
+[INFO] ============================================
+
+[INFO] Detectado entorno de producciÃ³n o certificado SSL
+[INFO] Configurando SSL con certificado TiDB...
+[INFO] Certificado guardado en: /tmp/tidb-ca-69326226696c4.crt
+[INFO] SSL habilitado: SSL_CA=/tmp/tidb-ca-69326226696c4.crt
+[âœ…] ConexiÃ³n a BD exitosa en intento 1
+[INFO] Base de datos: test
+[INFO] Usuario: AFGcY1HBfULJ2He.root
+
+[INFO] ============================================
+[INFO] Buscando tareas que vencen el 2025-12-05
+[INFO] Zona horaria: America/Lima
+[INFO] ============================================
+
+[INFO] Se encontraron 5 tareas para recordar
+
+[ENVIANDO] Tarea #240002
+           TÃ­tulo: aaasads
+           Para: ruben.rojas@upch.pe
+[05-Dec-2025 04:40:10 UTC] Error enviando correo a ruben.rojas@upch.pe: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 04:40:10 UTC] DiagnÃ³stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: ®
+åÑ#,ñŸb*²C/Ù¶åÇåî±~)~‘°šé¢H²,aýõ}
+¿œÖs^,DZŸÚ%j“]ÿgÔ½—Uº[¨	Çæd¶f{<Ölvwq-Ì4‹PaÄ¨$ªþÔ©05«…ß`ßGÊ8¡µ‡Æ¬ï¢»…\Ø'"~"ÿùO>·Ì;ð«†±oÀ¥m–ÍloæývW˜/Y±oó%¥˜igJ¥úzíîL÷hàôñ˜ µU¢»‹Zø1 .uuY¯”Mòäà=ýãš9¹’ùYT®ÝóR<köKô¹
+‘(Š/\’zú´õÍ}='ñ—ˆÏ:ø9ÈS}©lKû~:Þ?inèi¸üx;
+           âœ… ENVIADO
+
+[ENVIANDO] Tarea #270004
+           TÃ­tulo: AAAAAAAA
+           Para: ruben.rojas@upch.pe
+[05-Dec-2025 04:40:11 UTC] Error enviando correo a ruben.rojas@upch.pe: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 04:40:11 UTC] DiagnÃ³stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: §ëGì5kg/–ÄOÙ©xÂH½oŒhÌU¬r1DéLëµDk¬ÔÖ­JÊù,/°LŽöþð}^Ú1öÊí	ç
+           âœ… ENVIADO
+
+[ENVIANDO] Tarea #300001
+           TÃ­tulo: asasasads
+           Para: ruben.rojas@upch.pe
+[05-Dec-2025 04:40:11 UTC] Error enviando correo a ruben.rojas@upch.pe: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 04:40:11 UTC] DiagnÃ³stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: Çä†Åºk¡î|X3_<‡›B‚¸g.ÎPLí2°·IÜk0¿Ð´c¡œÅÁ
+           âœ… ENVIADO
+
+[ENVIANDO] Tarea #300002
+           TÃ­tulo: XDDDDDDDDDDD
+           Para: anderson.rojas1805@gmail.com
+[05-Dec-2025 04:40:12 UTC] Error enviando correo a anderson.rojas1805@gmail.com: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 04:40:12 UTC] DiagnÃ³stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: þÂ¾*S,m`Ãr¤E®i=©“$cá¹pñ¿©áÅ¯ÖŽL|2be
+           âœ… ENVIADO
+
+[ENVIANDO] Tarea #360002
+           TÃ­tulo: AAAAAA
+           Para: ruben.rojas@upch.pe
+[05-Dec-2025 04:40:12 UTC] Error enviando correo a ruben.rojas@upch.pe: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 04:40:12 UTC] DiagnÃ³stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: Æo÷cåtŒ¾Únº	½Qƒ1F´[,®¿ó<®.‡_8ìiù7æ0nº©£¤2c¥^?çàéã. áÃ+õ¨;VŠ˜9å_í…Û÷NŸGaÓÃ´yíIï×KÒ œÂýŠl/ûsæFÔ½æ/øõ=ùœuñpçÇ¥ûÏá~:ºt]yÝ´Õ½7r³ŽT¶5mÐ<›ÒVÃ{¾Ÿ--f$ŠbjcJ´>¶™»Ý“6cGQú'› …špKZß1³dDÄ`¥}Å;‡©7I=aœEÔç‰²u·ž‘tÝçù‹©STTÎI>´„"gõ[. Ê%«(iÿ¾jv‹„Ñ©ÞÙ3³D ÂT8ñ9T¸ØI–
+           âœ… ENVIADO
+
+[âœ… PROCESO COMPLETADO]
+    Recordatorios enviados: 5
+    Errores: 0
+    Total procesadas: 5
+
