@@ -28,8 +28,16 @@ $app->add(function (Request $request, Response $response, callable $next) {
 $app->add(function ($req, $res, $next) {
     $response = $next($req, $res);
 
-    return $response
+    $resp = $response
         ->withHeader('Access-Control-Allow-Origin', $this->get('settings')['cors'])
         ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
-        ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+        ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS')
+        ->withHeader('Access-Control-Max-Age', '86400');
+
+    // Responder rápidamente a preflight CORS
+    if ($req->getMethod() === 'OPTIONS') {
+        return $resp->withStatus(204);
+    }
+
+    return $resp;
 });
