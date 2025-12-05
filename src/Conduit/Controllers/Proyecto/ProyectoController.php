@@ -317,6 +317,7 @@ public function store(Request $request, Response $response)
         $proyecto = Proyecto::findOrFail($args['id']);
         $jwt = $request->getAttribute('jwt');
         $userId = $jwt['sub'] ?? null;
+        $id_proyecto = (int) $args['id'];
 
         if ($proyecto->id_usuario_creador != $userId) {
             return $response->withJson([
@@ -325,6 +326,10 @@ public function store(Request $request, Response $response)
         }
 
         $proyecto->update(['status' => '1']);
+
+        // Actualizar el estado de los miembros del proyecto
+        UsuarioRol::where('id_proyecto', $id_proyecto)
+            ->update(['status' => '1']);
 
         // Actualizar el estado de las columnas del proyecto
         $columnas = Columna::where('id_proyecto', $proyecto->id_proyecto)->get();
