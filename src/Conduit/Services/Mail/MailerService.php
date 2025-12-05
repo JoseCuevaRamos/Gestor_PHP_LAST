@@ -35,12 +35,13 @@ class MailerService
         $isProduction = getenv('APP_ENV') === 'production';
         
         if ($isProduction) {
-            // Producción: Validación estricta de certificados
+            // Producción: Validación de certificados con peer_name
             $this->mailer->SMTPOptions = [
                 'ssl' => [
                     'verify_peer'       => true,
                     'verify_peer_name'  => true,
                     'allow_self_signed' => false,
+                    'peer_name'         => 'smtp.gmail.com', // ✅ IMPORTANTE: Especificar el hostname
                 ],
             ];
         } else {

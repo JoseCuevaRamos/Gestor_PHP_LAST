@@ -161,3 +161,393 @@ Stack trace:
 [INFO] Proceso de recordatorios finalizado.
 [INFO] Buscando tareas que vencen el 2025-12-04 (hora Per√∫)...
 [INFO] Proceso de recordatorios finalizado.
+[INFO] Buscando tareas que vencen el 2025-12-05 (hora Per√∫)...
+[INFO] Proceso de recordatorios finalizado.
+[WARN] No se pudo conectar a la BD (intento 1/5): SQLSTATE[HY000] [1105] Connections using insecure transport are prohibited. See https://docs.pingcap.com/tidbcloud/secure-connections-to-serverless-tier-clusters
+[WARN] No se pudo conectar a la BD (intento 2/5): SQLSTATE[HY000] [1105] Connections using insecure transport are prohibited. See https://docs.pingcap.com/tidbcloud/secure-connections-to-serverless-tier-clusters
+[WARN] No se pudo conectar a la BD (intento 3/5): SQLSTATE[HY000] [1105] Connections using insecure transport are prohibited. See https://docs.pingcap.com/tidbcloud/secure-connections-to-serverless-tier-clusters
+[WARN] No se pudo conectar a la BD (intento 4/5): SQLSTATE[HY000] [1105] Connections using insecure transport are prohibited. See https://docs.pingcap.com/tidbcloud/secure-connections-to-serverless-tier-clusters
+[WARN] No se pudo conectar a la BD (intento 5/5): SQLSTATE[HY000] [1105] Connections using insecure transport are prohibited. See https://docs.pingcap.com/tidbcloud/secure-connections-to-serverless-tier-clusters
+[ERROR] No se pudo establecer conexi√≥n con la BD despu√©s de 5 intentos. Abortando.
+[WARN] No se pudo conectar a la BD (intento 1/5): SQLSTATE[HY000] [1105] Connections using insecure transport are prohibited. See https://docs.pingcap.com/tidbcloud/secure-connections-to-serverless-tier-clusters
+[WARN] No se pudo conectar a la BD (intento 2/5): SQLSTATE[HY000] [1105] Connections using insecure transport are prohibited. See https://docs.pingcap.com/tidbcloud/secure-connections-to-serverless-tier-clusters
+[WARN] No se pudo conectar a la BD (intento 3/5): SQLSTATE[HY000] [1105] Connections using insecure transport are prohibited. See https://docs.pingcap.com/tidbcloud/secure-connections-to-serverless-tier-clusters
+[WARN] No se pudo conectar a la BD (intento 4/5): SQLSTATE[HY000] [1105] Connections using insecure transport are prohibited. See https://docs.pingcap.com/tidbcloud/secure-connections-to-serverless-tier-clusters
+[WARN] No se pudo conectar a la BD (intento 5/5): SQLSTATE[HY000] [1105] Connections using insecure transport are prohibited. See https://docs.pingcap.com/tidbcloud/secure-connections-to-serverless-tier-clusters
+[ERROR] No se pudo establecer conexi√≥n con la BD despu√©s de 5 intentos. Abortando.
+
+Fatal error: Uncaught Error: Call to undefined method Dotenv\Dotenv::createImmutable() in /var/www/html/scripts/enviar_recordatorios.php:13
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/scripts/enviar_recordatorios.php on line 13
+[INFO] ============================================
+[INFO] Iniciando script de recordatorios
+[INFO] APP_ENV: production
+[INFO] APP_URL: http://localhost
+[INFO] DB_HOST: gateway01.us-east-1.prod.aws.tidbcloud.com
+[INFO] ============================================
+
+[INFO] Detectado entorno de producci√≥n o certificado SSL
+[INFO] Configurando SSL con certificado TiDB...
+[INFO] Certificado guardado en: /tmp/tidb-ca-6932220e3fae6.crt
+
+Fatal error: Uncaught Error: Undefined constant PDO::MYSQL_ATTR_SSL_MODE in /var/www/html/scripts/enviar_recordatorios.php:69
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/scripts/enviar_recordatorios.php on line 69
+[INFO] ============================================
+[INFO] Iniciando script de recordatorios
+[INFO] APP_ENV: production
+[INFO] APP_URL: http://localhost
+[INFO] DB_HOST: gateway01.us-east-1.prod.aws.tidbcloud.com
+[INFO] ============================================
+
+[INFO] Detectado entorno de producci√≥n o certificado SSL
+[INFO] Configurando SSL con certificado TiDB...
+[INFO] Certificado guardado en: /tmp/tidb-ca-6932225daf44b.crt
+[INFO] SSL habilitado: SSL_CA=/tmp/tidb-ca-6932225daf44b.crt
+[‚úÖ] Conexi√≥n a BD exitosa en intento 1
+[INFO] Base de datos: test
+[INFO] Usuario: AFGcY1HBfULJ2He.root
+
+[INFO] ============================================
+[INFO] Buscando tareas que vencen el 2025-12-05
+[INFO] Zona horaria: America/Lima
+[INFO] ============================================
+
+[INFO] Se encontraron 1 tareas para recordar
+
+[ENVIANDO] Tarea #240002
+           T√≠tulo: aaasads
+           Para: juanaaaa@ejemplo.com
+[05-Dec-2025 00:08:01 UTC] Error enviando correo a juanaaaa@ejemplo.com: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 00:08:01 UTC] Diagn√≥stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: _:RÙ‹WÄ€Â”¨="Í)ØÆ{‚;O¯?≤”d_•“T≠˚„DŒW≥?¬öXèB¥e¬Ñ.l/UˇÄ_:/‚ø“8N5*”πïæä£,—u°“ƒó
+           ‚úÖ ENVIADO
+
+[‚úÖ PROCESO COMPLETADO]
+    Recordatorios enviados: 1
+    Errores: 0
+    Total procesadas: 1
+
+[INFO] ============================================
+[INFO] Iniciando script de recordatorios
+[INFO] APP_ENV: production
+[INFO] APP_URL: http://localhost
+[INFO] DB_HOST: gateway01.us-east-1.prod.aws.tidbcloud.com
+[INFO] ============================================
+
+[INFO] Detectado entorno de producci√≥n o certificado SSL
+[INFO] Configurando SSL con certificado TiDB...
+[INFO] Certificado guardado en: /tmp/tidb-ca-6932231b544d1.crt
+[INFO] SSL habilitado: SSL_CA=/tmp/tidb-ca-6932231b544d1.crt
+[‚úÖ] Conexi√≥n a BD exitosa en intento 1
+[INFO] Base de datos: test
+[INFO] Usuario: AFGcY1HBfULJ2He.root
+
+[INFO] ============================================
+[INFO] Buscando tareas que vencen el 2025-12-05
+[INFO] Zona horaria: America/Lima
+[INFO] ============================================
+
+[INFO] Se encontraron 2 tareas para recordar
+
+[ENVIANDO] Tarea #240002
+           T√≠tulo: aaasads
+           Para: juanaaaa@ejemplo.com
+[05-Dec-2025 00:11:11 UTC] Error enviando correo a juanaaaa@ejemplo.com: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 00:11:11 UTC] Diagn√≥stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: aIüÁ≤]CΩ¨\ÑH·˛nl• E£y∞6W˙1å∂ﬁf≥áQÂ/.	BƒÚ<Iıî=fá0*	Xr:\Ùn÷©´Â˛M$jŒQw*x%7«Ãää$ PB ›Ám
+           ‚úÖ ENVIADO
+
+[ENVIANDO] Tarea #270004
+           T√≠tulo: AAAAAAAA
+           Para: juanaaaa@ejemplo.com
+[05-Dec-2025 00:11:12 UTC] Error enviando correo a juanaaaa@ejemplo.com: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 00:11:12 UTC] Diagn√≥stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: a∞NIÇGÒ$¶|&±πO#Ç}†˛§dÒ8µ§i˘Ì‚5üÎüó¶÷ì¨¬:án2˜\Dt¢áàµT‘í2[êcx¢K≤Hıvﬂ&À4ÕÄß3yHÿ±Ì
+=^åTÎ˛F¬
+           ‚úÖ ENVIADO
+
+[‚úÖ PROCESO COMPLETADO]
+    Recordatorios enviados: 2
+    Errores: 0
+    Total procesadas: 2
+
+[INFO] ============================================
+[INFO] Iniciando script de recordatorios
+[INFO] APP_ENV: production
+[INFO] APP_URL: http://localhost
+[INFO] DB_HOST: gateway01.us-east-1.prod.aws.tidbcloud.com
+[INFO] ============================================
+
+[INFO] Detectado entorno de producci√≥n o certificado SSL
+[INFO] Configurando SSL con certificado TiDB...
+[INFO] Certificado guardado en: /tmp/tidb-ca-693223a2b95b7.crt
+[INFO] SSL habilitado: SSL_CA=/tmp/tidb-ca-693223a2b95b7.crt
+[‚úÖ] Conexi√≥n a BD exitosa en intento 1
+[INFO] Base de datos: test
+[INFO] Usuario: AFGcY1HBfULJ2He.root
+
+[INFO] ============================================
+[INFO] Buscando tareas que vencen el 2025-12-05
+[INFO] Zona horaria: America/Lima
+[INFO] ============================================
+
+[INFO] Se encontraron 2 tareas para recordar
+
+[ENVIANDO] Tarea #240002
+           T√≠tulo: aaasads
+           Para: juanaaaa@ejemplo.com
+[05-Dec-2025 00:13:26 UTC] Error enviando correo a juanaaaa@ejemplo.com: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 00:13:26 UTC] Diagn√≥stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: `E∏»s¿y.¢DÉvŒœçÓ’+ØÌ—Õ∫…ÿhãø8nQÀß»>ÎsIÁõKAq™€A]°=›•¬2%‚Dà∑6W≈*Ÿ	RÅÜ:ÄKß◊À˝’ƒû…îæé◊$
+           ‚úÖ ENVIADO
+
+[ENVIANDO] Tarea #270004
+           T√≠tulo: AAAAAAAA
+           Para: juanaaaa@ejemplo.com
+[05-Dec-2025 00:13:27 UTC] Error enviando correo a juanaaaa@ejemplo.com: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 00:13:27 UTC] Diagn√≥stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: `_Æ™√+°H(-˚€’h…~‚GŸ¬ÆúP–≈##ÜvLR7ˆ7·7ì°„5¡F§]ÁÖé‚
+           ‚úÖ ENVIADO
+
+[‚úÖ PROCESO COMPLETADO]
+    Recordatorios enviados: 2
+    Errores: 0
+    Total procesadas: 2
+
+[INFO] ============================================
+[INFO] Iniciando script de recordatorios
+[INFO] APP_ENV: production
+[INFO] APP_URL: http://localhost
+[INFO] DB_HOST: gateway01.us-east-1.prod.aws.tidbcloud.com
+[INFO] ============================================
+
+[INFO] Detectado entorno de producci√≥n o certificado SSL
+[INFO] Configurando SSL con certificado TiDB...
+[INFO] Certificado guardado en: /tmp/tidb-ca-693224be05de6.crt
+[INFO] SSL habilitado: SSL_CA=/tmp/tidb-ca-693224be05de6.crt
+[‚úÖ] Conexi√≥n a BD exitosa en intento 1
+[INFO] Base de datos: test
+[INFO] Usuario: AFGcY1HBfULJ2He.root
+
+[INFO] ============================================
+[INFO] Buscando tareas que vencen el 2025-12-05
+[INFO] Zona horaria: America/Lima
+[INFO] ============================================
+
+[INFO] Se encontraron 2 tareas para recordar
+
+[ENVIANDO] Tarea #240002
+           T√≠tulo: aaasads
+           Para: juanaaaa@ejemplo.com
+[05-Dec-2025 00:18:09 UTC] Error enviando correo a juanaaaa@ejemplo.com: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 00:18:09 UTC] Diagn√≥stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: aÏ(M!§}ÏÜ3;˙ëZ«=úLö<}[[ƒØZ
+           ‚úÖ ENVIADO
+
+[ENVIANDO] Tarea #270004
+           T√≠tulo: AAAAAAAA
+           Para: juanaaaa@ejemplo.com
+[05-Dec-2025 00:18:10 UTC] Error enviando correo a juanaaaa@ejemplo.com: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 00:18:10 UTC] Diagn√≥stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: _Pﬁ÷Oüµ¡Ài
+           ‚úÖ ENVIADO
+
+[‚úÖ PROCESO COMPLETADO]
+    Recordatorios enviados: 2
+    Errores: 0
+    Total procesadas: 2
+
+[INFO] ============================================
+[INFO] Iniciando script de recordatorios
+[INFO] APP_ENV: production
+[INFO] APP_URL: http://localhost
+[INFO] DB_HOST: gateway01.us-east-1.prod.aws.tidbcloud.com
+[INFO] ============================================
+
+[INFO] Detectado entorno de producci√≥n o certificado SSL
+[INFO] Configurando SSL con certificado TiDB...
+[INFO] Certificado guardado en: /tmp/tidb-ca-693224f4f321e.crt
+[INFO] SSL habilitado: SSL_CA=/tmp/tidb-ca-693224f4f321e.crt
+[‚úÖ] Conexi√≥n a BD exitosa en intento 1
+[INFO] Base de datos: test
+[INFO] Usuario: AFGcY1HBfULJ2He.root
+
+[INFO] ============================================
+[INFO] Buscando tareas que vencen el 2025-12-05
+[INFO] Zona horaria: America/Lima
+[INFO] ============================================
+
+[INFO] Se encontraron 2 tareas para recordar
+
+[ENVIANDO] Tarea #240002
+           T√≠tulo: aaasads
+           Para: juanaaaa@ejemplo.com
+[05-Dec-2025 00:19:05 UTC] Error enviando correo a juanaaaa@ejemplo.com: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 00:19:05 UTC] Diagn√≥stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: _Òb6∫Cü«¸v€©·‡izY±¡v–)Ã¯Æ–"êÜ`ö∑ï7bÿ’o@ß~ÏiW∑†–◊ıÆCF›;KntœCV÷y„P;Ï4E•˚°äT6ƒÿÀ
+1ÄÀ
+           ‚úÖ ENVIADO
+
+[ENVIANDO] Tarea #270004
+           T√≠tulo: AAAAAAAA
+           Para: juanaaaa@ejemplo.com
+[05-Dec-2025 00:19:06 UTC] Error enviando correo a juanaaaa@ejemplo.com: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 00:19:06 UTC] Diagn√≥stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: `x—∏Á6Ïm«>,F.ëkØgd;K‚ΩJCg
+Ä$ ü≤vx>“i˜ ∂baÒ	√Ö
+Ê!W^(<døﬁ◊ÛwKÿIGr‘!0`9D◊n¶9Ø”úÓ®?«¶–ˇ
+           ‚úÖ ENVIADO
+
+[‚úÖ PROCESO COMPLETADO]
+    Recordatorios enviados: 2
+    Errores: 0
+    Total procesadas: 2
+
+[INFO] ============================================
+[INFO] Iniciando script de recordatorios
+[INFO] APP_ENV: production
+[INFO] APP_URL: http://localhost
+[INFO] DB_HOST: gateway01.us-east-1.prod.aws.tidbcloud.com
+[INFO] ============================================
+
+[INFO] Detectado entorno de producci√≥n o certificado SSL
+[INFO] Configurando SSL con certificado TiDB...
+[INFO] Certificado guardado en: /tmp/tidb-ca-69322579a2a07.crt
+[INFO] SSL habilitado: SSL_CA=/tmp/tidb-ca-69322579a2a07.crt
+[‚úÖ] Conexi√≥n a BD exitosa en intento 1
+[INFO] Base de datos: test
+[INFO] Usuario: AFGcY1HBfULJ2He.root
+
+[INFO] ============================================
+[INFO] Buscando tareas que vencen el 2025-12-05
+[INFO] Zona horaria: America/Lima
+[INFO] ============================================
+
+[INFO] Se encontraron 2 tareas para recordar
+
+[ENVIANDO] Tarea #240002
+           T√≠tulo: aaasads
+           Para: juanaaaa@ejemplo.com
+[05-Dec-2025 00:21:17 UTC] Error enviando correo a juanaaaa@ejemplo.com: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 00:21:17 UTC] Diagn√≥stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: _])Enj∂<.ü%NíbÎ˛—Ì∏∏Ÿ¢ñ~e8M_"Æò–NÇ≈‚∫tˆ÷~üûÑaÍªZöX…LË”·˚H*πíí®"«o◊háÕûÄöîØ‰KË-Î¿uõ÷
+           ‚úÖ ENVIADO
+
+[ENVIANDO] Tarea #270004
+           T√≠tulo: AAAAAAAA
+           Para: juanaaaa@ejemplo.com
+[05-Dec-2025 00:21:17 UTC] Error enviando correo a juanaaaa@ejemplo.com: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 00:21:17 UTC] Diagn√≥stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: a¿≈°µ|¸#g$ﬂ‡C“,ŸésçóÅRΩØ¿9‡õ-ç9CÓbœ'ﬁ¢nrˆíõ|4¥∂Tœ)¨ñ˚3#£Ó™í5kÔ§Ëñrø]AÆ<ò$µ!
+           ‚úÖ ENVIADO
+
+[‚úÖ PROCESO COMPLETADO]
+    Recordatorios enviados: 2
+    Errores: 0
+    Total procesadas: 2
+
+[INFO] ============================================
+[INFO] Iniciando script de recordatorios
+[INFO] APP_ENV: production
+[INFO] APP_URL: http://localhost
+[INFO] DB_HOST: gateway01.us-east-1.prod.aws.tidbcloud.com
+[INFO] ============================================
+
+[INFO] Detectado entorno de producci√≥n o certificado SSL
+[INFO] Configurando SSL con certificado TiDB...
+[INFO] Certificado guardado en: /tmp/tidb-ca-693225c6b4d0c.crt
+[INFO] SSL habilitado: SSL_CA=/tmp/tidb-ca-693225c6b4d0c.crt
+[‚úÖ] Conexi√≥n a BD exitosa en intento 1
+[INFO] Base de datos: test
+[INFO] Usuario: AFGcY1HBfULJ2He.root
+
+[INFO] ============================================
+[INFO] Buscando tareas que vencen el 2025-12-05
+[INFO] Zona horaria: America/Lima
+[INFO] ============================================
+
+[INFO] Se encontraron 2 tareas para recordar
+
+[ENVIANDO] Tarea #240002
+           T√≠tulo: aaasads
+           Para: juanaaaa@ejemplo.com
+[05-Dec-2025 00:22:34 UTC] Error enviando correo a juanaaaa@ejemplo.com: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 00:22:34 UTC] Diagn√≥stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: `?Œø[îÔá√∞˝
+           ‚úÖ ENVIADO
+
+[ENVIANDO] Tarea #270004
+           T√≠tulo: AAAAAAAA
+           Para: juanaaaa@ejemplo.com
+[05-Dec-2025 00:22:35 UTC] Error enviando correo a juanaaaa@ejemplo.com: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 00:22:35 UTC] Diagn√≥stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: aÏà‰]r2\8RÕ¬Ô}'/“â◊UøÓRS=äA ı	2ﬂ¸èrÈ˙¢ΩQá‡„zΩyïÓ5“≥vZˆCyæ]∫{ΩìƒgÓﬁ‰®±ÿÿÔ)∑(íòÕ±k8Á‡6
+           ‚úÖ ENVIADO
+
+[‚úÖ PROCESO COMPLETADO]
+    Recordatorios enviados: 2
+    Errores: 0
+    Total procesadas: 2
+
+[INFO] ============================================
+[INFO] Iniciando script de recordatorios
+[INFO] APP_ENV: production
+[INFO] APP_URL: https://gestor-php-last.onrender.com
+[INFO] DB_HOST: gateway01.us-east-1.prod.aws.tidbcloud.com
+[INFO] ============================================
+
+[INFO] Detectado entorno de producci√≥n o certificado SSL
+[INFO] Configurando SSL con certificado TiDB...
+[INFO] Certificado guardado en: /tmp/tidb-ca-6932264ead068.crt
+[INFO] SSL habilitado: SSL_CA=/tmp/tidb-ca-6932264ead068.crt
+[‚úÖ] Conexi√≥n a BD exitosa en intento 1
+[INFO] Base de datos: test
+[INFO] Usuario: AFGcY1HBfULJ2He.root
+
+[INFO] ============================================
+[INFO] Buscando tareas que vencen el 2025-12-05
+[INFO] Zona horaria: America/Lima
+[INFO] ============================================
+
+[INFO] Se encontraron 2 tareas para recordar
+
+[ENVIANDO] Tarea #240002
+           T√≠tulo: aaasads
+           Para: juanaaaa@ejemplo.com
+[05-Dec-2025 00:24:50 UTC] Error enviando correo a juanaaaa@ejemplo.com: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 00:24:50 UTC] Diagn√≥stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: a 
+ΩÿëÁÍ≤”.µƒË˘/#B†)≤k·W˚q`Ùícyã“ç√?ñÿqºDOÈQ™!H¢Ú˜ixıÈ±F¬rxÇ{V8 2«ƒláVÀ∏Æ+,ûkΩ K%˛¨Kos9
+           ‚úÖ ENVIADO
+
+[ENVIANDO] Tarea #270004
+           T√≠tulo: AAAAAAAA
+           Para: juanaaaa@ejemplo.com
+[05-Dec-2025 00:24:50 UTC] Error enviando correo a juanaaaa@ejemplo.com: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed
+[05-Dec-2025 00:24:50 UTC] Diagn√≥stico SMTP: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): SSL operation failed with code 1. OpenSSL Error messages:
+error:0A000086:SSL routines::certificate verify failed SMTP server error: QUIT command failed Detail: `Zã⁄[Œ
+           ‚úÖ ENVIADO
+
+[‚úÖ PROCESO COMPLETADO]
+    Recordatorios enviados: 2
+    Errores: 0
+    Total procesadas: 2
+

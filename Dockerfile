@@ -17,6 +17,9 @@ RUN apk add --no-cache \
     && update-ca-certificates \ 
     && docker-php-ext-install pdo pdo_mysql opcache
 
+
+RUN update-ca-certificates --fresh
+
 # Instalar Composer (gestor de dependencias de PHP)
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
